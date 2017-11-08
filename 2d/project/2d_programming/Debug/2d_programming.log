@@ -1,0 +1,2 @@
+﻿  main.cpp
+c:\users\fabian.loayza\documents\2d\src\main.cpp(6): fatal error C1083: Cannot open include file: 'litegfx.h': No such file or directory
