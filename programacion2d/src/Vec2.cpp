@@ -68,8 +68,30 @@ Vec2 Vec2::norm() {
 
 float Vec2::dot(const Vec2 &other){
 	return ((x * other.x) + (y * other.y));
+	
 }
 
 float Vec2::angle(const Vec2& other) const {
-	return atanf((other.y - y) / (other.x - x));
+	float angle;
+	float diffY = y - other.y;
+	float diffX = other.x - x;
+	
+	angle = fabs(atan((diffY) / (diffX)));
+
+	if ((diffX < 0) && (diffY > 0))
+		angle = PI - angle;
+	if ((diffX < 0) && (diffY < 0))
+		angle = PI + angle;
+	if ((diffX > 0) && (diffY < 0))
+		angle = 2 * PI - angle;
+
+	angle = (angle * 180) / PI;
+	return angle;
 }
+
+float Vec2::distance(const Vec2& other) const {
+	
+	return static_cast<float>(sqrt(powf(other.x - x, 2) + powf(other.y - y, 2)));
+
+}
+

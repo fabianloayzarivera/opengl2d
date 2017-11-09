@@ -1,9 +1,14 @@
 #pragma once
 #include "math.h"
-
+#include <string>
+#include <iostream>
+#define PI 3.141592653589793
 
 class Vec2 {
 public:
+	static double screenCenterX;
+	static double screenCenterY;
+
 	float x;
 	float y;
 
@@ -24,4 +29,3 @@ public:
 	float distance(const Vec2& other) const;
 
 };
-
